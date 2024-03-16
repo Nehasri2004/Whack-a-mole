@@ -95,7 +95,6 @@ class AnimatedBackground extends StatelessWidget {
   }
 }*/
 
-
 /*import 'package:flutter/material.dart';
 import 'package:myapp/pages/login.dart';
 
@@ -185,13 +184,11 @@ class AnimatedBackground extends StatelessWidget {
   }
 }*/
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; 
-import 'package:myapp/pages/login.dart';
+import 'package:myapp/pages/game.dart';
 // for asset loading
 
-
-
 class IntroPage_app extends StatelessWidget {
+  const IntroPage_app({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -203,7 +200,8 @@ class IntroPage_app extends StatelessWidget {
             children: <Widget>[
               // Add the image
               Image(
-                image: AssetImage('images/wam.png'), // Replace with your image path
+                image: AssetImage(
+                    'images/wam.png'), // Replace with your image path
                 width: 200,
                 height: 200,
               ),
@@ -231,7 +229,10 @@ class IntroPage_app extends StatelessWidget {
                   // Play button
                   ElevatedButton(
                     onPressed: () {
-                      // Handle play button press
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => WhackAMoleApp()));
                     },
                     child: Text(
                       'PLAY',
@@ -270,6 +271,6 @@ class IntroPage_app extends StatelessWidget {
         ),
       ),
     );
+    
   }
 }
-
